@@ -23,9 +23,12 @@ The format is based on [Keep a Changelog 1.1.0](https://keepachangelog.com/en/1.
 - Focused tests covering identity composition, scoped identity, lifecycle independence, and typed references.
 - Apache-2.0 licensing and package metadata.
 - Build, Test, Package, and Architecture Check workflow baseline inherited from the InfrastructureIntent repository template.
+- GitHub Packages publication from version tags during the evolving `0.x` phase.
+- Release-tag validation that requires the `vX.Y.Z` tag to match the package version before publication.
 
 ### Changed
 
+- Set the initial package version baseline to `0.1.0`.
 - Identity component contracts now explicitly reject null, empty, and whitespace values as infrastructure-independent structural invariants.
 - Test-project build defaults were corrected so test projects do not inherit production XML documentation requirements.
 - .NET 10 test execution was aligned with Microsoft.Testing.Platform/xUnit v3 requirements.
