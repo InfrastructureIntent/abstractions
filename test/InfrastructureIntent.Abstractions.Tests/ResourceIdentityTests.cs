@@ -5,7 +5,7 @@ namespace InfrastructureIntent.Abstractions.Tests;
 public sealed class ResourceIdentityTests
 {
     [Fact]
-    public void Equal_components_produce_equal_identity()
+    public void EqualComponentsProduceEqualIdentity()
     {
         var left = new ResourceIdentity(
             new IntegrationId("azure"),
@@ -22,7 +22,7 @@ public sealed class ResourceIdentityTests
     }
 
     [Fact]
-    public void Scope_encoded_by_integration_distinguishes_same_logical_name()
+    public void ScopeEncodedByIntegrationDistinguishesSameLogicalName()
     {
         var east = new ResourceIdentity(
             new IntegrationId("azure"),
@@ -38,7 +38,7 @@ public sealed class ResourceIdentityTests
     }
 
     [Fact]
-    public void Resource_type_participates_in_identity()
+    public void ResourceTypeParticipatesInIdentity()
     {
         var nic = new ResourceIdentity(
             new IntegrationId("azure"),
