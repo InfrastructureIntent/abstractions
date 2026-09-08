@@ -37,6 +37,14 @@ The repository was created from the InfrastructureIntent C# repository template 
 
 The initial work also validated the standard Build, Test, Package, and Architecture Check workflows and surfaced template defects that were corrected at the template source, including test-project XML documentation behavior and .NET 10 Microsoft.Testing.Platform configuration.
 
+### Package distribution
+
+The package version baseline is `0.1.0`.
+
+During the evolving `0.x` phase, official InfrastructureIntent packages are published to GitHub Packages only. The package workflow validates every PR and `main` update, but publication occurs only from a `vX.Y.Z` tag. The workflow verifies that the tag version matches the package version before publishing to the InfrastructureIntent GitHub Packages NuGet feed.
+
+NuGet.org publication is intentionally excluded from this release and requires a deliberate future stability decision.
+
 ### Licensing
 
 `InfrastructureIntent.Abstractions` is licensed under Apache License 2.0. This package is part of the public InfrastructureIntent extension contract surface and is intentionally separate from the controlled/private InfrastructureIntent Engine implementation.
@@ -54,5 +62,6 @@ Beginning with this milestone:
 
 ### Remaining work before 0.1.0 closeout
 
-- Complete issue #6: validation, CI, package, and GitHub Packages publication baseline.
-- Complete issue #7: release documentation and milestone closeout.
+- Complete issue #6 and merge the GitHub Packages publication baseline.
+- Close the milestone once all assigned issues are complete.
+- Create/tag `v0.1.0`; the tag will publish `InfrastructureIntent.Abstractions 0.1.0` to GitHub Packages.
