@@ -5,8 +5,4 @@
     <PackageId>InfrastructureIntent.Abstractions</PackageId>
     <Description>Public contracts for the InfrastructureIntent ecosystem.</Description>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Xml2Doc.MSBuild" PrivateAssets="all" />
-  </ItemGroup>
 </Project>
