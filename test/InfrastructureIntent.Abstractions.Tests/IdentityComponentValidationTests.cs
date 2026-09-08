@@ -2,7 +2,7 @@ using Xunit;
 
 namespace InfrastructureIntent.Abstractions.Tests;
 
-internal sealed class IdentityComponentValidationTests
+public sealed class IdentityComponentValidationTests
 {
     [Theory]
     [InlineData(null)]
