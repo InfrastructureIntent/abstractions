@@ -5,10 +5,13 @@ on:
   push:
     branches:
       - main
+    tags:
+      - 'v*'
   workflow_dispatch:
 
 permissions:
   contents: read
+  packages: write
 
 jobs:
   package:
@@ -56,6 +59,18 @@ jobs:
         if: steps.repo.outputs.has_projects == 'true'
         run: dotnet test "${{ steps.repo.outputs.solution }}" --configuration Release --no-build --no-restore
 
+      - name: Validate release tag matches package version
+        if: steps.repo.outputs.has_projects == 'true' && startsWith(github.ref, 'refs/tags/v')
+        shell: bash
+        run: |
+          set -euo pipefail
+          tag_version="${GITHUB_REF_NAME#v}"
+          package_version=$(dotnet msbuild src/InfrastructureIntent.Abstractions/InfrastructureIntent.Abstractions.csproj -getProperty:Version -nologo | tail -n 1 | tr -d '\r')
+          if [ "$tag_version" != "$package_version" ]; then
+            echo "Release tag version '$tag_version' does not match package version '$package_version'."
+            exit 1
+          fi
+
       - name: Pack
         if: steps.repo.outputs.has_projects == 'true'
         run: dotnet pack "${{ steps.repo.outputs.solution }}" --configuration Release --no-build --no-restore --output artifacts/packages
@@ -79,10 +94,22 @@ jobs:
           path: artifacts/packages/*
           if-no-files-found: error
 
+      - name: Publish package to GitHub Packages
+        if: steps.packages.outputs.created == 'true' && startsWith(github.ref, 'refs/tags/v')
+        shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          dotnet nuget push "artifacts/packages/*.nupkg" \
+            --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" \
+            --api-key "$GITHUB_TOKEN" \
+            --skip-duplicate
+
       - name: Template repository notice
         if: steps.repo.outputs.has_projects != 'true'
         run: echo "No production projects exist yet; package validation is skipped for the template itself."
 
-# Publication is intentionally not part of this workflow.
-# Release/publish automation should be added by repository type once package feed,
-# signing, versioning, and release-trigger policies are defined.
+# NuGet.org publication is intentionally excluded during the evolving 0.x phase.
+# GitHub Packages publication occurs only from version tags whose version matches
+# the package Version declared by the repository.
