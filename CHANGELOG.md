@@ -34,5 +34,4 @@ The format is based on [Keep a Changelog 1.1.0](https://keepachangelog.com/en/1.
 
 - Removed redundant project-local `Xml2Doc.MSBuild` configuration so Xml2Doc remains centrally managed by repository-wide build configuration.
 
-[Unreleased]: https://github.com/InfrastructureIntent/abstractions/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/InfrastructureIntent/abstractions/releases/tag/v0.1.0
+Comparison and release links will be added when the initial `v0.1.0` tag exists; the changelog SHALL NOT point at release artifacts that have not yet been created.
