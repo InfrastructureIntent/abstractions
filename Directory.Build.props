@@ -16,6 +16,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <InfrastructureIntentEnableXml2Doc>true</InfrastructureIntentEnableXml2Doc>
 
+    <VersionPrefix>0.1.0</VersionPrefix>
     <Authors>InfrastructureIntent</Authors>
     <Company>InfrastructureIntent</Company>
     <RepositoryType>git</RepositoryType>
