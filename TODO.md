@@ -7,7 +7,7 @@ GitHub Issues and Milestones are the authoritative planning system. Items listed
 ## Current milestone: 0.1.0 - Initial Abstractions
 
 - Complete the validation, CI, package, and GitHub Packages publication baseline tracked by issue #6.
-- Complete release documentation and milestone closeout tracked by issue #7.
+- After issue #6 is complete, close the milestone and create the `v0.1.0` release/tag so the package can publish to GitHub Packages.
 
 ## Candidate future work
 
