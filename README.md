@@ -44,6 +44,16 @@ dotnet test InfrastructureIntent.Abstractions.sln -c Release --no-build
 dotnet pack InfrastructureIntent.Abstractions.sln -c Release --no-build -o artifacts
 ```
 
+## Release management
+
+Planned implementation work is tracked through GitHub Issues assigned to a release milestone. Milestones represent coherent release scope rather than schedules and do not require due dates.
+
+- [`CHANGELOG.md`](CHANGELOG.md) records curated notable changes and follows Keep a Changelog 1.1.0.
+- [`TODO.md`](TODO.md) provides a lightweight view of candidate/future work; GitHub Issues and Milestones remain authoritative.
+- [`RELEASE_NOTES.md`](RELEASE_NOTES.md) is the evolving human-readable narrative for the current milestone and can seed the GitHub Release description at closeout.
+
+During the evolving `0.x` phase, packages are intended for GitHub Packages only. NuGet.org publication is deferred until the public contract surface reaches an explicit stability milestone.
+
 ## Versioning
 
 Public contract compatibility follows the contract-generation model documented by InfrastructureIntent ADR-007. Package versions and contract generations are related but are not assumed to be identical concepts.
