@@ -5,7 +5,7 @@ namespace InfrastructureIntent.Abstractions.Tests;
 public sealed class ResourceReferenceTests
 {
     [Fact]
-    public void Same_domain_reference_can_point_to_managed_or_existing_implementations()
+    public void SameDomainReferenceCanPointToManagedOrExistingImplementations()
     {
         var managed = new ManagedSubnet("network-rg/prod-vnet/app");
         var existing = new ExistingSubnet("network-rg/prod-vnet/app");
