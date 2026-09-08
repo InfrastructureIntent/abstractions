@@ -13,15 +13,14 @@
     <AnalysisLevel>latest-recommended</AnalysisLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 
-    <!-- Production projects generate XML docs by default. Directory.Build.targets disables this for test projects. -->
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <InfrastructureIntentEnableXml2Doc>true</InfrastructureIntentEnableXml2Doc>
 
-    <!-- Common package defaults. Repository/package licensing is intentionally NOT defaulted by the template. -->
     <Authors>InfrastructureIntent</Authors>
     <Company>InfrastructureIntent</Company>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/InfrastructureIntent/REPOSITORY_NAME</RepositoryUrl>
+    <RepositoryUrl>https://github.com/InfrastructureIntent/abstractions</RepositoryUrl>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>

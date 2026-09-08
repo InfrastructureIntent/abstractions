@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>InfrastructureIntent.Abstractions</AssemblyName>
+    <RootNamespace>InfrastructureIntent.Abstractions</RootNamespace>
+    <PackageId>InfrastructureIntent.Abstractions</PackageId>
+    <Description>Public contracts for the InfrastructureIntent ecosystem.</Description>
+  </PropertyGroup>
+</Project>
