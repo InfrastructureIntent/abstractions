@@ -6,6 +6,6 @@ namespace InfrastructureIntent.Abstractions;
 /// <param name="Value">The stable resource type identifier.</param>
 public readonly record struct ResourceType(string Value)
 {
-    /// <inheritdoc />
+    /// <summary>Returns the stable resource type identifier.</summary>
     public override string ToString() => Value;
 }
