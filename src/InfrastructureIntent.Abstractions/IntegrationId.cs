@@ -6,6 +6,6 @@ namespace InfrastructureIntent.Abstractions;
 /// <param name="Value">The stable Integration identifier.</param>
 public readonly record struct IntegrationId(string Value)
 {
-    /// <inheritdoc />
+    /// <summary>Returns the stable Integration identifier.</summary>
     public override string ToString() => Value;
 }
