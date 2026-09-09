@@ -30,12 +30,14 @@ No public InfrastructureIntent.Abstractions contracts are added, removed, or cha
 
 Before release closeout require:
 
-- Build: passed.
-- Test: passed.
-- Package: passed.
-- Architecture Check: passed.
-- Copilot/review findings: actioned or explicitly dispositioned.
-- Public API surface: unchanged from `0.1.0`.
+- Build: pending.
+- Test: pending.
+- Package: pending.
+- Architecture Check: pending.
+- Copilot/review findings: action or explicit disposition required.
+- Public API surface: confirmation required against `0.1.0`.
+
+Final release evidence will be recorded only after the maintenance PR is merged and the closeout state is known.
 
 ### Remaining work before closeout
 
