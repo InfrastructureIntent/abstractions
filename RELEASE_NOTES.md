@@ -41,7 +41,7 @@ PR #13 completed with the required validation on its final head:
 
 ### Distribution / publication
 
-The release remains GitHub-Packages-only during the evolving `0.x` phase. NuGet.org publication is intentionally excluded.
+The release remains GitHub Packages only during the evolving `0.x` phase. NuGet.org publication is intentionally excluded.
 
 The `v0.1.1` tag is the publication trigger and must point at the final release-closeout commit with package version `0.1.1`.
 
