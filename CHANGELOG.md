@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog 1.1.0](https://keepachangelog.com/en/1.
 
 ## [Unreleased]
 
+### Changed
+
+- Clarified the repository agent contract so daily iteration logs are maintained throughout work and explicitly verified before repository work is declared complete.
+
 ## [0.1.1] - 2026-09-09
 
 ### Changed
