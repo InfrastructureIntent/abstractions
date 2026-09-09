@@ -4,11 +4,15 @@ This file provides a lightweight repository-facing view of known future work for
 
 GitHub Issues and Milestones are the authoritative planning system. Items listed here should either correspond to an existing issue/milestone or remain clearly marked as a candidate until promoted into planned work.
 
+## Current milestone
+
+`0.1.1 - Repository Baseline Alignment`
+
+Current planned work is issue #12, a patch-level repository-maintenance alignment with `InfrastructureIntent/repository-template` `v0.1.0`. This milestone must not introduce or change public Abstractions contracts.
+
 ## Released baseline
 
 `0.1.0 - Initial Abstractions` was released on 2026-09-08 and published to GitHub Packages as `InfrastructureIntent.Abstractions 0.1.0`.
-
-There is no active Abstractions implementation milestone after `0.1.0`. New implementation work must first be assigned to a new milestone and represented by a GitHub issue before code changes begin.
 
 ## Candidate future work
 
