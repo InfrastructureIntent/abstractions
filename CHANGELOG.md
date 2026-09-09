@@ -6,13 +6,7 @@ The format is based on [Keep a Changelog 1.1.0](https://keepachangelog.com/en/1.
 
 ## [Unreleased]
 
-### Added
-
-- Release-documentation workflow for milestone-driven development.
-- `TODO.md` as a lightweight repository-facing view of future work.
-- `RELEASE_NOTES.md` as the evolving narrative for the current milestone/release.
-
-## [0.1.0] - Unreleased
+## [0.1.0] - 2026-09-08
 
 ### Added
 
@@ -23,6 +17,9 @@ The format is based on [Keep a Changelog 1.1.0](https://keepachangelog.com/en/1.
 - Focused tests covering identity composition, scoped identity, lifecycle independence, and typed references.
 - Apache-2.0 licensing and package metadata.
 - Build, Test, Package, and Architecture Check workflow baseline inherited from the InfrastructureIntent repository template.
+- Release-documentation workflow for milestone-driven development.
+- `TODO.md` as a lightweight repository-facing view of future work.
+- `RELEASE_NOTES.md` as the evolving narrative for milestone/release state.
 - GitHub Packages publication from version tags during the evolving `0.x` phase.
 - Release-tag validation that requires the `vX.Y.Z` tag to match the package version before publication.
 
@@ -37,4 +34,5 @@ The format is based on [Keep a Changelog 1.1.0](https://keepachangelog.com/en/1.
 
 - Removed redundant project-local `Xml2Doc.MSBuild` configuration so Xml2Doc remains centrally managed by repository-wide build configuration.
 
-Comparison and release links will be added when the initial `v0.1.0` tag exists; the changelog SHALL NOT point at release artifacts that have not yet been created.
+[Unreleased]: https://github.com/InfrastructureIntent/abstractions/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/InfrastructureIntent/abstractions/releases/tag/v0.1.0

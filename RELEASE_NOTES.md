@@ -2,7 +2,9 @@
 
 ## 0.1.0 - Initial Abstractions
 
-> Status: In progress
+> Status: Released
+>
+> Released: 2026-09-08
 >
 > Milestone: `0.1.0 - Initial Abstractions`
 >
@@ -39,9 +41,11 @@ The initial work also validated the standard Build, Test, Package, and Architect
 
 ### Package distribution
 
-The package version baseline is `0.1.0`.
+The released package version is `0.1.0`.
 
-During the evolving `0.x` phase, official InfrastructureIntent packages are published to GitHub Packages only. The package workflow validates every PR and `main` update, but publication occurs only from a `vX.Y.Z` tag. The workflow verifies that the tag version matches the package version before publishing to the InfrastructureIntent GitHub Packages NuGet feed.
+During the evolving `0.x` phase, official InfrastructureIntent packages are published to GitHub Packages only. The package workflow validates every PR and `main` update, while official publication occurs only from a `vX.Y.Z` tag whose version matches the package version.
+
+`v0.1.0` was created from the release commit and successfully published `InfrastructureIntent.Abstractions 0.1.0` to the InfrastructureIntent GitHub Packages NuGet feed.
 
 NuGet.org publication is intentionally excluded from this release and requires a deliberate future stability decision.
 
@@ -58,10 +62,8 @@ Beginning with this milestone:
 - implementation PRs should correspond to milestone-assigned issues;
 - `CHANGELOG.md` records curated notable changes as work lands;
 - `TODO.md` is a lightweight repository-facing view, while GitHub Issues/Milestones remain authoritative;
-- this file evolves during the milestone and can seed the GitHub Release description at milestone close.
+- release notes evolve during the milestone and record the final released state at closeout.
 
-### Remaining work before 0.1.0 closeout
+### Release outcome
 
-- Complete issue #6 and merge the GitHub Packages publication baseline.
-- Close the milestone once all assigned issues are complete.
-- Create/tag `v0.1.0`; the tag will publish `InfrastructureIntent.Abstractions 0.1.0` to GitHub Packages.
+The `0.1.0` milestone completed the initial public Abstractions contract surface, established deterministic validation and packaging, and proved the GitHub-Packages-only release path required for early InfrastructureIntent development.
