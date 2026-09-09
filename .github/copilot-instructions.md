@@ -26,8 +26,10 @@ Follow the canonical InfrastructureIntent architecture and standards in the `Inf
 - Shared MSBuild policy belongs in `Directory.Build.props` / `Directory.Build.targets`.
 - Central package versions belong in `Directory.Packages.props`.
 - `.csproj` files contain project-specific metadata and dependencies, not duplicated repository defaults.
-- Public production APIs require XML documentation; Xml2Doc-generated Markdown must stay current.
-- Test projects do not require public XML/Xml2Doc documentation.
+- Public production APIs require XML documentation and production projects that generate API documentation explicitly reference `Xml2Doc.MSBuild`.
+- Test projects do not require public XML/Xml2Doc documentation and must not reference `Xml2Doc.MSBuild`.
+- Planned implementation requires a GitHub issue assigned to an established milestone before coding begins.
+- Keep `CHANGELOG.md`, `TODO.md`, and `RELEASE_NOTES.md` aligned with the active release state.
 - Add/update tests for behavioral changes.
 - Prefer deterministic output and stable diagnostics.
 - Aggregate independent user-correctable validation failures where safe; fail fast only when continuation would be invalid or misleading.
@@ -35,3 +37,5 @@ Follow the canonical InfrastructureIntent architecture and standards in the `Inf
 ## Review behavior
 
 When suggesting or reviewing a change, call out architecture-boundary violations even when the code compiles and tests pass. Prefer the smallest change that preserves published contracts and ownership boundaries.
+
+Review findings should be actioned or explicitly dispositioned with concise technical rationale before their threads are resolved.

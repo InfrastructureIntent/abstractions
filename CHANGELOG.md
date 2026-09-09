@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog 1.1.0](https://keepachangelog.com/en/1.
 
 ## [Unreleased]
 
+### Changed
+
+- Align repository infrastructure with `InfrastructureIntent/repository-template` `v0.1.0` without changing the public contract surface.
+- Replace legacy automatic Xml2Doc package injection with explicit production-project Xml2Doc intent.
+- Bring Architecture Check enforcement forward to the released template baseline.
+- Align repository agent and Copilot guidance with milestone-driven release and review conventions.
+- Set the package baseline to `0.1.1` for the repository-maintenance patch release.
+
 ## [0.1.0] - 2026-09-08
 
 ### Added

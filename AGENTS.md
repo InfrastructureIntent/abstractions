@@ -14,8 +14,10 @@ Before substantive work:
 
 1. Read this repository's `README.md`.
 2. Read applicable canonical architecture/standards from `InfrastructureIntent/documentation`.
-3. Review the current GitHub issue/milestone driving the work.
-4. Create or update today's repository-local iteration log under `docs/iterations/YYYY/YYYY-MM-DD.md`.
+3. Review the current GitHub milestone and governing issue.
+4. Confirm the planned implementation issue is assigned to an established milestone before coding begins.
+5. Review `CHANGELOG.md`, `TODO.md`, and `RELEASE_NOTES.md` for the active release context.
+6. Create or update today's repository-local iteration log under `docs/iterations/YYYY/YYYY-MM-DD.md`.
 
 During work:
 
@@ -27,15 +29,38 @@ During work:
 - do not put repository-wide build policy into individual `.csproj` files;
 - keep package versions in `Directory.Packages.props`;
 - keep production projects under `src/` and test projects under `test/`;
-- update documentation when public behavior or contracts change.
+- production projects that generate API documentation explicitly reference `Xml2Doc.MSBuild`; test projects do not;
+- update documentation when public behavior or contracts change;
+- update `CHANGELOG.md` as notable changes land;
+- keep `TODO.md` as an orientation aid only—GitHub Issues/Milestones remain authoritative;
+- keep `RELEASE_NOTES.md` aligned with the active milestone and actual release state.
 
 Before completion:
 
 - run restore/build/test in Release configuration;
 - run repository architecture checks;
 - verify generated documentation is current when public APIs changed;
+- review all PR feedback and distinguish actionable findings from informational observations;
+- action valid review findings before merge;
+- when a review finding is intentionally not actioned, record a concise technical rationale rather than silently dismissing it;
+- resolve review threads only after the finding has been actioned or explicitly dispositioned;
 - record validation evidence, decisions, blockers, and next work in the iteration log;
-- ensure the PR links the governing issue.
+- ensure the PR links the governing milestone-assigned issue;
+- ensure release documentation reflects the change when it affects the active release scope.
+
+## Milestones and release management
+
+Milestones represent coherent release scope rather than schedules; due dates are optional.
+
+Planned implementation must not begin without an issue assigned to an established milestone. `TODO.md` does not authorize implementation by itself.
+
+Use the release files as follows:
+
+- `CHANGELOG.md` — curated notable changes, following Keep a Changelog 1.1.0 with `[Unreleased]` retained at the top;
+- `TODO.md` — lightweight repository-facing candidate/current-work orientation only;
+- `RELEASE_NOTES.md` — evolving human-readable release narrative for the active milestone.
+
+At release closeout, update release documentation to reflect what actually shipped, record validation/publication evidence, and do not move or recreate an existing release tag.
 
 ## Iteration logs
 
@@ -53,6 +78,8 @@ Cross-repository weekly summaries are generated from these local logs and GitHub
 
 ## Commit and PR discipline
 
-Commits should be small enough to explain and review. PR descriptions should state the problem, architectural impact, implementation, and validation evidence.
+Commits should be small enough to explain and review. PR descriptions should state the problem, governing milestone/issue, architectural impact, implementation, validation evidence, and compatibility impact.
 
 Do not claim architecture compliance solely because code compiles. Changes must conform to the documented ownership and dependency boundaries as well as tests.
+
+Do not invent architecture, contracts, abstractions, or extensibility points that are not required by the active issue. When a new public contract appears necessary, pressure-test the requirement against the Engine/consumer need before expanding the public surface.
